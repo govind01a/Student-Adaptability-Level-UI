@@ -1,9 +1,14 @@
 import './App.css';
+import AppRoutes from './Routes/AppRoutes';
+import Header from './Components/header/Header';
+import Footer from './Components/footer/Footer';
 
 function App() {
   return (
     <div className="App">
-      <h1>Hello User!</h1>
+      <Header />
+      <AppRoutes />
+      <Footer />
     </div>
   );
 }
