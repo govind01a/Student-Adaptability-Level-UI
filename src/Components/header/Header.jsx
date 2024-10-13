@@ -12,7 +12,7 @@ import Button from "@mui/material/Button";
 // import Tooltip from '@mui/material/Tooltip';
 import MenuItem from "@mui/material/MenuItem";
 import SiteLogo from "../../UI/logos/SiteLogo";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 // const pages = ['Home', 'Measure', 'About Us', 'Contact Us'];
 const pages = [
@@ -24,6 +24,7 @@ const pages = [
 // const settings = ['Profile', 'Logout'];
 
 function Header() {
+  const location = useLocation();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   // const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -127,7 +128,24 @@ function Header() {
                 onClick={handleCloseNavMenu}
                 component={Link}
                 to={page.path}
-                sx={{ my: 2, color: "white", display: "block" }}
+                sx={{
+                  my: 2,
+                  color: "white",
+                  display: "block",
+                  fontWeight:
+                    location.pathname === page.path ? "bold" : "normal",
+                  pointerEvents:
+                    location.pathname === page.path ? "none" : "auto",
+                  transform:
+                    location.pathname === page.path
+                      ? "translateY(-2px)"
+                      : "none",
+                  borderBottom:
+                    location.pathname === page.path
+                      ? "4px solid white"
+                      : "none",
+                  paddingBottom: location.pathname === page.path ? "4px" : "0",
+                }}
               >
                 {page.name}
               </Button>
