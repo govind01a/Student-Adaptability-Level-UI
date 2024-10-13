@@ -11,7 +11,7 @@ import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 // import Tooltip from '@mui/material/Tooltip';
 import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
+import SiteLogo from "../../UI/logos/SiteLogo";
 import { Link } from "react-router-dom";
 
 // const pages = ['Home', 'Measure', 'About Us', 'Contact Us'];
@@ -46,9 +46,9 @@ function ResponsiveAppBar() {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+          <SiteLogo sx={{ display: { xs: "none", md: "flex" }, mr: 2 }} />
           <Typography
-            variant="h6"
+            variant="h4"
             noWrap
             sx={{
               mr: 2,
@@ -62,7 +62,6 @@ function ResponsiveAppBar() {
           >
             SAP
           </Typography>
-
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
@@ -104,9 +103,9 @@ function ResponsiveAppBar() {
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+          {/* <SiteLogo sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} /> */}
           <Typography
-            variant="h5"
+            variant="h4"
             noWrap
             sx={{
               mr: 2,
